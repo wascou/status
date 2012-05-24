@@ -1,0 +1,1 @@
+<a href="{concat('status/profile/',$node.data_map.user_account.content.login)|ezurl('no')}">{$node.name|wash}</a>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software>
+	<metadata>
+		<name>Wascou Software Edition - Status</name>
+		<version>1.0.0</version>
+		<copyright>Wascou Software Edition</copyright>
+		<license>CeCILL v2 and GPL v3</license>
+		<info_url>http://www.wascou.org/eng/Software/Status</info_url>
+
+		<software>
+			<uses>
+				<name>jQuery</name>
+				<license>GPL v2</license>
+				<copyright>The jQuery Project</copyright>
+				<info_url>http://www.jquery.org</info_url>
+				<version>1.4.4</version>
+			</uses>
+			<uses>
+				<name>jQuery User Interface ( jQuery UI )</name>
+				<license>GPL v2</license>
+				<copyright>The jQuery Project</copyright>
+				<info_url>http://www.jqueryui.com</info_url>
+				<version>1.8.9</version>
+			</uses>
+
+		</software>
+
+	</metadata>
+
+	<dependencies>
+		<uses>
+			<extension name="ezwebin" />
+			<extension name="ezfind" />
+			<extension name="ezflow" />
+		</uses>
+		<requires>
+			<extension name="ezwebin" />
+			<extension name="ezfind" />
+			<extension name="ezflow" />
+		</requires>
+		<extends>
+			<extension name="ezfind" />
+		</extends>
+	</dependencies>
+
+</software>

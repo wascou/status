@@ -1,0 +1,116 @@
+Wascou Software Edition - Status - version 1.0.8
+Copyright 2010/2011 - Maxime THOMAS for Wascou Software Edition
+Contact : maxime.thomas@wascou.org
+
+================================================================================
+
+1 - Installation
+2 - Requirements
+3 - Troubleshooting
+4 - Maintenance
+
+================================================================================
+1 - Installation
+--------------------------------------------------------------------------------
+
+The process is the following :
+1 - Unzip / untar the source
+2 - Copy the directory "wse_st" in the "extension" folder of eZPublish. To be
+sure, take the directory that contains the "extension.xml" file
+3 - Edit the settings/override/site.ini.append.php.
+4 - Ensure that in the Extension block you have the wse_st extension loaded in
+first, before ezfind :
+
+[ExtensionSettings]
+ActiveExtensions[]=wse_st
+
+5 - Regenerate autoloads array for extensions
+6 - From the ez root directory, run the following command :
+
+$ mysql -u<user> -p <database> < extension/wse_st/sql/mysql/schema.sql
+
+7 - Click on "Clear all caches".
+8 - Stop the solr java daemon for ezfind.
+9 - Go to the ezfind extension in extension/ezfind/java/solr.multicore
+10 - Run the following commands :
+
+#####
+$ mv solr.xml solr.xml.old
+$ ln -s ../../../wse_st/solr.multicore/solr.xml .
+$ ln -s ../../../wse_st/solr.multicore/wsest .
+$ cd ..
+$ ln -s ../../wse_st/solr.multicore/solr.sh solr_multicore.sh
+$ chmod 700 solr_multicore.sh
+#####
+
+11 - Run the Solr Daemon using extension/wse_st/solr.multicore/solr.sh
+
+
+================================================================================
+2 - Requirements
+--------------------------------------------------------------------------------
+
+In the next part, AZC means Apache Zeta Components.
+
+The following items are required in order to make the product work :
+
+PHP Version
+===========
+5.2.9 and >
+
+Supported Databases
+===================
+All databases supported via the eZPublish API and the AZC Database Components
+API
+
+eZPublish versions
+==================
+4.3.0, 4.4.0
+
+Clustering support
+==================
+Not implemented
+
+Required PHP modules
+====================
+AZC required modules.
+http://incubator.apache.org/zetacomponents/documentation/install.html#required-e
+xtensions
+
+Required Extensions
+===================
+ezwebin : 1.7.0
+ezfind : 2.3.0
+ezjscore : 1.2.0
+
+
+3rd party
+=========
+jQuery 1.4.4 and jQuery UI 1.8.9
+Nothings to do, those solutions are integrated inside the product.
+
+
+================================================================================
+3 - Troubleshooting
+--------------------------------------------------------------------------------
+There's a known incompatibility bug with ezfind 2.2 that includes javascript
+inside the search box template for auto completion. This totally avoids the
+load of wsest js libraries. It has been reported on issues.ez.no under #17993 :
+http://issues.ez.no/IssueView.php?Id=17993
+
+
+================================================================================
+4 - Maintenance
+--------------------------------------------------------------------------------
+
+Scripts to be runned
+====================
+For the moment, no script has to be runned.
+
+Other maintenance operations
+============================
+For the moment, no other maintenance operations is required.
+
+
+================================================================================
+END OF THE DOCUMENT

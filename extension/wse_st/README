@@ -1,0 +1,179 @@
+Wascou Software Edition - Status - version 1.0.8
+Copyright 2010/2011 - Maxime THOMAS for Wascou Software Edition
+Contact : maxime.thomas@wascou.org
+
+================================================================================
+
+1 - License
+2 - Feature description
+3 - Requirements and dependencies summary
+3 - Installation
+4 - Set up
+5 - Advanced set up
+6 - Contact and information
+
+================================================================================
+1 - License
+--------------------------------------------------------------------------------
+
+This whole piece of software is dual licensed :
+- under the CeCILL license version 2 for all content that is not a third party
+item. For more information, look at the LICENSE_CeCILL file (French and English
+versions are provided).
+- under the GPL license version 3 for third party items. For more information,
+look at the LICENSE_GPL file.
+
+
+================================================================================
+2 - Feature description
+--------------------------------------------------------------------------------
+
+"WSE - Status" is an extension for eZPublish.
+The aim of the this extension is to provide a basic and intuitive social network
+integrated into eZPublish.
+
+This extension provides the following features :
+
+- Integration into eZPublish extension system :
+    - Worklflows event for creation and removing of users.
+    - Mails are sent over eZPublish API
+
+- Specific features :
+    - Status feature : create, read and remove status.
+    - Diffusion feature : spread, unspread and comment a status.
+    - Favorite feature : favorite and "unfavorite" a status.
+    - Private message feature : send and recieve status from other people.
+    - Lists feature : create, read, update and remove specific lists.
+
+- Featured pages :
+    - Home page
+    - Profile
+    - Favorites
+    - Followers
+    - Leaders
+    - Lists //TODO
+    - Private messages
+
+- UI and ergonomic features :
+    - Dialog boxes and message for important actions
+    - Specific toolbar for status and profile
+    - Icons for each feature
+    - Easy to skin / override
+    - Compliant with Google Chrome / Firefox / Any modern browser
+
+- Research
+	- Fully linked with eZFind's SolR
+
+
+================================================================================
+2 - Requirements and dependencies summary
+--------------------------------------------------------------------------------
+
+The requirements are the following :
+- Apache Zeta Components : 2009.2 minimum.
+- PHP : 5.2.9 minimum.
+- eZPublish 4.4 with eZFind and eZFlow packages installed.
+- A compliant database system : MySQL or Oracle, supported by Apache Zeta compo-
+nents.
+
+This extension is dependant on :
+- jQuery 1.4.4
+- jQuery 1.8.9 and a custom theme
+
+For more information look at the INSTALL file.
+
+
+================================================================================
+3 - Installation
+--------------------------------------------------------------------------------
+
+The install process is described in the INSTALL file.
+
+
+================================================================================
+4 - Set up
+--------------------------------------------------------------------------------
+
+You must configure each siteaccess if you want to have a redirection to the home
+after user logged in :
+
+1 - Edit the settings/<siteaccess>/site.ini.append.php
+2 - Locate the "SiteSettings" block or if it does not exist, create it.
+3 - Specify the following default page that will be used after login :
+DefaultPage=/status/home
+4 - Save the file.
+5 - Clear the caches.
+
+
+Specific Settings
+-----------------
+The specific settings are set in the "settings/status.ini.append.php" file in
+this extension.
+
+Global Settings
+---------------
+StatusLimit : number of status by page.
+BioAttribute : string identifier of the class attribute used for biography. See
+further for how to set the bio. This attribute must be the same for all the user
+classes. See below.
+
+Workflow Settings
+-----------------
+UserClasses : string identifiers of the classes used for users.
+
+Debug Settings
+--------------
+DebugAjax : if set to enabled, the error is returned in the XHR response and you
+can see it with Firebug or another debugger.
+
+
+================================================================================
+5 - Advanced set up
+--------------------------------------------------------------------------------
+
+The following features can be set up :
+
+Auto creation of the profile before user creation :
+1 - Go to the back office with admin rights.
+2 - Go to "Workflows" and chose your group of workflows ("Standard" by default).
+3 - Create a workflow.
+4 - Name it : "WSE Status - Auto status account created".
+5 - Add one event of type : "Event/Auto create an account for WSE Status"
+6 - Click on OK
+7 - Go to "Triggers"
+8 - In the list for "content > publish > before", select the workflow you have
+created.
+
+Auto removing of the profile and status data after user removing :
+1 - Go to the back office with admin rights.
+2 - Go to "Workflows" and chose your group of workflows ("Standard" by default).
+3 - Create a workflow.
+4 - Name it : "WSE Status - Auto status account deleted".
+5 - Add one event of type : "Event/Auto delete an account for WSE Status"
+6 - Click on OK
+7 - Go to "Triggers".
+8 - In the list for "content > delete > after", select the workflow you have
+created.
+
+Add a bio information to the native "User" class :
+1 - Go to the back office with admin rights.
+2 - Go to Setup > Classes > Users > User
+3 - At the bottom right, choose "Text block" and click "Add".
+4 - Fill the new attribute with "Biography" as "Name" and "bio" as "Identifier".
+5 - Save the class.
+
+Set up the bio from an existing user class attribute :
+1 - Edit "status.ini.append.php".
+2 - Change the setting "BioAttribute" to the field that will contain the bio.
+
+
+================================================================================
+6 - Contact and information
+--------------------------------------------------------------------------------
+
+If you need information or support on this product, you can send an email to
+maxime.thomas@wascou.org
+Or use the contact form on http://www.wascou.org.
+
+================================================================================
+END OF THE DOCUMENT

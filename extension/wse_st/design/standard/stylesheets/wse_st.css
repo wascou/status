@@ -1,0 +1,63 @@
+/* GENERIC */
+.hidden{display:none;}
+
+/* MAIN LAYOUT */
+#status-container{float:left;width:500px;margin:0px 10px 0px 0px;}
+#block-info {float:right;width:200px;}
+#block-info .box{padding:10px;margin-bottom:10px;border: 1px solid #CCCCCC;background:#F0F0F0;}
+#person-picture {text-align:center;}
+textarea.text, input.text{
+	width: 160px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	color:#CCCCCC;
+	border: 1px solid #C3C7C5;
+	background-image: url(/extension/ezflow/design/ezflow/images/search-input-bg.png);
+	background-position: left bottom;
+	background-repeat: repeat-x;
+	font-size: 1em;
+	padding: 2px 10px;
+	float: left;
+	margin-right: 5px;
+}
+textarea.text_to_add{width:430px;}
+textarea.high{height:90px;}
+.text_typed, textarea.text_typed{color:#000000;}
+#status-form-counter{clear:both;overflow:hidden;}
+
+/* STATUS BOX */
+.status-box, .person-summary{height:80px;width:495px; padding:10px 0px; border-top: 1px solid #CCCCCC;clear:both;}
+.status-image{float:left;width:50px;height:80px;overflow: hidden;padding:0px 10px;}
+.status-user-name{color:#CCCCCC;font-size:12px;font-weight: normal;}
+.status-user-via{color:#CCCCCC;font-size:12px;font-weight: bold;}
+.status-time-ago{color:#CCCCCC;font-size:11px;float:right;}
+.status-message{font-size:14px;}
+.status-header{padding:0px;margin:0px;}
+.status-colored{background-color:#F8F8FF;}
+
+/* STATUS TOOLBAR */
+#status-toolbar{height:18px;position:absolute;margin:67px 0px 0px 0px; padding:2px 5px;}
+#status-toolbar span{float:right;cursor: pointer;}
+
+/* PROFILE TOOLBAR */
+#status-profile-actions{height:18px;padding:2px 5px;}
+#status-profile-actions span{float:left;cursor: pointer;}
+
+
+/* ICONS */
+.status-header .ui-icon{float:right;}
+.ui-icon-star.status-already{background-image: url(../images/ui/ui-icons_ffd800_256x240.png);}
+.ui-icon-transferthick-e-w.status-already, .ui-icon-script.status-already{background-image: url(../images/ui/ui-icons_5a9dbf_256x240.png);}
+
+/* DIALOGS */
+.ui-dialog{border:2px solid #000000;opacity:0.85;}
+.ui-dialog-titlebar{display:none;}
+.status-dialog-message{margin-top:60px;}
+.negative{color:#FF0000;}
+#dialog-sendmessage-receiver{width:264px;}
+.ui-dialog textarea{width: 100%;}
+
+/* HELP */
+li.question{font-weight: bold;}
+li.answer{background-image: none;padding-bottom:5px;}
+.back_url{float:right;}
